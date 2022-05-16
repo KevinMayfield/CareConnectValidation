@@ -1,0 +1,934 @@
+<Composition>
+    <id value="fa2a75a7-4257-422d-92a4-cf537f078e13"/>
+    <meta>
+        <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-EDIS-Composition-1"/>
+    </meta>
+    <!-- Extension to carry details of the Correspondence Care Setting Type. -->
+    <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-CareSettingType-1">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="893061000000109"/>
+                <display value="Cardiology service"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    <identifier>
+        <system value="https://tools.ietf.org/html/rfc4122"/>
+        <value value="2b5d459b-df79-4a2b-9b0c-95b2a7ee2ca4"/>
+    </identifier>
+    <!--The workflow/clinical status of this composition. The status is a marker for 
+the clinical standing of the document.-->
+    <status value="final"/>
+    <type>
+        <!--Discharge Summary document type-->
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="373942005"/>
+            <display value="Discharge summary"/>
+        </coding>
+    </type>
+    <!--Reference to the patient subject of the Composition-->
+    <subject>
+        <reference value="urn:uuid:31686b67-9f20-4644-9a54-193d2f91de57"/>
+    </subject>
+    <!--Reference to the clinical encounter or type of care this documentation is associated with.-->
+    <encounter>
+        <reference value="urn:uuid:4f36b35a-ad18-4ea9-a3fb-c893f709e88a"/>
+    </encounter>
+    <!--The composition editing time, when the composition was last logically changed by the author.-->
+    <date value="2015-02-17T10:00:00+00:00"/>
+    <!--Identifies who is responsible for the information in the composition, not necessarily who typed it in-->
+    <author>
+        <reference value="urn:uuid:6239b7a7-380d-46ff-a1c5-7abc4e68f8bc"/>
+    </author>
+    <title value="Cardiology Service Discharge Summary"/>
+    <!--Identifies the organization responsible for ongoing maintenance of and 
+access to the composition/document information.-->
+    <custodian>
+        <reference value="urn:uuid:12bba528-a08a-448b-946b-7e8008044025"/>
+    </custodian>
+    <!--Admission details-->
+    <section>
+        <!--The label for this particular section. This will be part of the rendered content for the document, 
+and is often used to build a table of contents.-->
+        <title value="Admission details"/>
+        <!--A SNOMED CT code identifying the kind of content contained within the section-->
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="886781000000108"/>
+                <display value="Admission details"/>
+            </coding>
+        </code>
+        <!--A human-readable narrative that contains the attested content of the section-->
+        <text>
+            <status value="extensions"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Reason for admission</th>
+                            <td>ECG: inferior ischaemia</td>
+                        </tr>
+                        <tr>
+                            <th>Admission method</th>
+                            <td>Accident and emergency or dental casualty department of the Health Care Provider</td>
+                        </tr>
+                        <tr>
+                            <th>Source of admission</th>
+                            <td>NHS other Hospital Provider - Ward for general Patients or the younger 
+physically disabled or A and E department</td>
+                        </tr>
+                        <tr>
+                            <th>Date/time of admission</th>
+                            <td>12-Feb-2015 09:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--Reference to the encounter resource where information for this section can be found-->
+        <entry>
+            <reference value="urn:uuid:4f36b35a-ad18-4ea9-a3fb-c893f709e88a"/>
+        </entry>
+    </section>
+    <!--Allergies and adverse reactions-->
+    <section>
+        <title value="Allergies and adverse reactions"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="886921000000105"/>
+                <display value="Allergies and adverse reactions"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Causative agent</th>
+                            <td>Penicillin -class of antibiotic-</td>
+                        </tr>
+                        <tr>
+                            <th>Description of reaction</th>
+                            <td>Eruption due to drug</td>
+                        </tr>
+                        <tr>
+                            <th>Date recorded</th>
+                            <td>12 February 2015</td>
+                        </tr>
+                        <tr>
+                            <th>Severity</th>
+                            <td>Mild</td>
+                        </tr>
+                        <tr>
+                            <th>Certainty</th>
+                            <td>Certain</td>
+                        </tr>
+                        <tr>
+                            <th>Comment</th>
+                            <td>No swelling</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--Reference to Allergies List as the source of information for this section-->
+        <entry>
+            <reference value="urn:uuid:95e8f8d0-dfc3-4c72-a9dc-7ba1ccd1fab4"/>
+        </entry>
+    </section>
+    <!--Assessment scales-->
+    <section>
+        <title value="Assessment scales"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887141000000103"/>
+                <display value="Assessment scales"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Assessment scale</th>
+                            <td>TIMI assessment</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!--Clinical summary-->
+    <section>
+        <title value="Clinical summary"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887181000000106"/>
+                <display value="Clinical summary"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Clinical Summary</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>60 year old man complaining of chest pain lasting around 2 hours.</p>
+                                <p>Examination unremarkable.</p>
+                                <p>Inferior ischaemic changes on ECGs.</p>
+                                <p>Coronary angiogram demonstrated diseased RCA, drug eluting stent successfully placed.</p>
+                                <p>Appropriate secondary prevention medications prescribed for follow up with Cardiac Rehabilitation team.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!--Diagnoses-->
+    <section>
+        <title value="Diagnoses"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887161000000102"/>
+                <display value="Diagnoses"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Diagnosis name</th>
+                            <td>Coronary arteriosclerosis</td>
+                        </tr>
+                        <tr>
+                            <th>Comment</th>
+                            <td>The coronary angiogram indicates a diseased RCA.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <entry>
+            <reference value="urn:uuid:caf5f17d-e73d-4aaa-a406-dab1717da0c4"/>
+        </entry>
+    </section>
+    <!--Discharge details-->
+    <section>
+        <title value="Discharge details"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="886811000000106"/>
+                <display value="Discharge details"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Discharging consultant</th>
+                            <td>
+                                <p>Prefix: Dr</p>
+                                <p>Given Name: Paul</p>
+                                <p>Family Name: Rastall</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Discharging specialty/department</th>
+                            <td>Cardiology</td>
+                        </tr>
+                        <tr>
+                            <th>Discharge location</th>
+                            <td>
+                                <p>Name: Cramer ward</p>
+                                <p>Identifier: RR8CRAM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Date/time of discharge</th>
+                            <td>16-Feb-2015 15:00</td>
+                        </tr>
+                        <tr>
+                            <th>Discharge method</th>
+                            <td>Patient discharged on clinical advice or with clinical consent</td>
+                        </tr>
+                        <tr>
+                            <th>Discharge type</th>
+                            <td>Usual place of residence unless listed below, for example, a private dwelling 
+whether owner occupied or owned by Local Authority, housing association or other landlord. 
+This includes wardened accommodation but not residential accommodation where health care is provided. 
+It also includes Patients with no fixed abode.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--Reference to the Encounter entry as a source of information for this section-->
+        <entry>
+            <reference value="urn:uuid:4f36b35a-ad18-4ea9-a3fb-c893f709e88a"/>
+        </entry>
+        <!--Reference to the Practitioner entry as a source of information for this section-->
+        <entry>
+            <reference value="urn:uuid:6239b7a7-380d-46ff-a1c5-7abc4e68f8bc"/>
+        </entry>
+    </section>
+    <!--Distribution list-->
+    <section>
+        <title value="Distribution list"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887261000000109"/>
+                <display value="Distribution list"/>
+            </coding>
+        </code>
+        <text>
+            <status value="generated"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>
+                                <p>Prefix: Mrs</p>
+                                <p>Given Name: Angela</p>
+                                <p>Family Name: Jones</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Role</th>
+                            <td>Community Nurse</td>
+                        </tr>
+                        <tr>
+                            <th>Organisation name</th>
+                            <td>Leeds Community Healthcare NHS Trust</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>
+                                <p>Prefix: Dr</p>
+                                <p>Given Name: John</p>
+                                <p>Family Name: Lorenzo</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Role</th>
+                            <td>General Medical Practitioner</td>
+                        </tr>
+                        <tr>
+                            <th>Organisation name</th>
+                            <td>MGP Medical Centre</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--Reference to the practitioner entries as recipients of information-->
+        <entry>
+            <reference value="urn:uuid:8ece9986-9af0-4882-b0cf-23a96ea7b509"/>
+        </entry>
+        <entry>
+            <reference value="urn:uuid:5e414a77-d394-4248-a631-00e45ddb64a0"/>
+        </entry>
+    </section>
+    <!-- GP Practice-->
+    <section>
+        <title value="GP practice"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="886711000000101"/>
+                <display value="GP practice"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>GP name</th>
+                            <td>
+                                <p>Prefix: Dr</p>
+                                <p>Given Name: John</p>
+                                <p>Family Name: Lorenzo</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>GP practice details</th>
+                            <td>
+                                <p>Name: MGP Medical Centre</p>
+                                <p>Address:</p>
+                                <p>Address Line: 1 MGP House, Overtown</p>
+                                <p>City: Leeds</p>
+                                <p>Post Code: LS21 7PA</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--Reference to the Organisation entry as the source of information for this section-->
+        <entry>
+            <reference value="urn:uuid:f9f24f89-646b-4a19-a6b1-cabfa3b612e1"/>
+        </entry>
+    </section>
+    <!--Individual requirements-->
+    <section>
+        <title value="Individual requirements"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="1078911000000106"/>
+                <display value="Individual requirements"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Individual requirements</th>
+                            <td>Hospital needs to arrange for transportation to the patient's home.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!--Information and advice given-->
+    <section>
+        <title value="Information and advice given"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="1052951000000105"/>
+                <display value="Information and advice given"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Information and advice given</th>
+                            <td>
+                                <p>Patient seen by Cardiac Rehab and information given regarding the diagnosis and possible 
+life style changes when he is discharged.</p>
+                                <p>Richard is concerned about whether he can drive and asks about this as he is a self employed electrician.</p>
+                                <p> Dr Paul Rastall advised him that he should not to drive for at least a week, 
+but reassured him that he should be able to drive once recovered and said he will arrange for a community follow-up.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!--Investigation results-->
+    <section>
+        <title value="Investigation results"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="1082101000000102"/>
+                <display value="Investigation results"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Investigation result</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre>
+Full Blood Count 
+
+TestValueUnitsReference Range
+White Cell Count11.1x10*9/L3.5 - 10.0
+Red Cell Count5.0x10*12/L4.25 - 5.75 
+Haemoglobin150g/L13.0 - 17.0
+Haematocrit0.2300.400 - 0.500
+Mean Cell Volume90fL84 - 98
+Mean Cell Hb33.0pg27.5 - 32.0
+Mean Cell Hb Con34.0pg31.0 - 35.0
+RDW12.0%&lt; 14.5
+Platelet Count300x10*9/L150 - 400
+
+Machine Differential 
+
+Test ValueUnits Reference Range
+Neutrophils7.0x10*9/L1.7 - 7.5
+Lymphocytes3.5x10*9/L1.0 - 3.5 
+Monocytes0.3x10*9/L&lt; 0.6 
+Eosinophils0.4x10*9/L&lt; 0.4 
+Basophils0.1x10*9/L&lt; 0.1 
+LUCs0.2x10*9/L&lt; 0.4 
+</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!--Medications-->
+    <section>
+        <title value="Medications and medical devices"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="933361000000108"/>
+                <display value="Medications and medical devices"/>
+            </coding>
+        </code>
+        <text>
+            <status value="extensions"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Medication name</th>
+                            <td>Ramipril 2.5mg tablets</td>
+                        </tr>
+                        <tr>
+                            <th>Form</th>
+                            <td>Tablet</td>
+                        </tr>
+                        <tr>
+                            <th>Route</th>
+                            <td>Oral</td>
+                        </tr>
+                        <tr>
+                            <th>Dose directions description</th>
+                            <td>One 2.5mg tablet once a day.</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Continued</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Medication name</th>
+                            <td>Aspirin 75mg tablets (Sigma Pharmaceuticals Plc)</td>
+                        </tr>
+                        <tr>
+                            <th>Form</th>
+                            <td>Tablet</td>
+                        </tr>
+                        <tr>
+                            <th>Route</th>
+                            <td>Oral</td>
+                        </tr>
+                        <tr>
+                            <th>Dose directions description</th>
+                            <td>Take one 75mg tablet once a day.</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Continued</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Medication name</th>
+                            <td>Clopidogrel 75mg tablets (Almus Pharmaceuticals Ltd)</td>
+                        </tr>
+                        <tr>
+                            <th>Form</th>
+                            <td>Tablet</td>
+                        </tr>
+                        <tr>
+                            <th>Route</th>
+                            <td>Oral</td>
+                        </tr>
+                        <tr>
+                            <th>Dose directions description</th>
+                            <td>Take one 75mg tablet daily for one year then stop.</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Added</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Medication name</th>
+                            <td>Simvastatin 40mg tablets (Brown &amp; Burk UK Ltd)</td>
+                        </tr>
+                        <tr>
+                            <th>Form</th>
+                            <td>Tablet</td>
+                        </tr>
+                        <tr>
+                            <th>Route</th>
+                            <td>Oral</td>
+                        </tr>
+                        <tr>
+                            <th>Dose directions description</th>
+                            <td>Take one 40mg tablet once a day.</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Continued</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Medication name</th>
+                            <td>Bisoprolol 5mg tablets (A A H Pharmaceuticals Ltd)</td>
+                        </tr>
+                        <tr>
+                            <th>Form</th>
+                            <td>Tablet</td>
+                        </tr>
+                        <tr>
+                            <th>Route</th>
+                            <td>Oral</td>
+                        </tr>
+                        <tr>
+                            <th>Dose directions description</th>
+                            <td>Take one 5mg tablet daily.</td>
+                        </tr>
+                        <tr>
+                            <th>Comment</th>
+                            <td>Recommend Uptitrate according to BP and HR</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Continued</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--Reference to medication list-->
+        <entry>
+            <reference value="urn:uuid:d0710501-2e32-4cbd-bd63-a14354bbcd0f"/>
+        </entry>
+    </section>
+    <!-- Patient and carer concerns, expectations and wishes-->
+    <section>
+        <title value="Patient and carer concerns, expectations and wishes"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="1052941000000107"/>
+                <display value="Patient and carer concerns, expectations and wishes"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Patient and carer concerns, expectations and wishes</th>
+                            <td>The carer is concerned about the possibility of the patient suffering from a heart attack, 
+bearing a similarity to the illness of the mother of the patient. 
+The patient is worried about the impact of their illness on their ability to work and drive.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!-- Patient demographics-->
+    <section>
+        <title value="Patient demographics"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="886731000000109"/>
+                <display value="Patient demographics"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Patient name</th>
+                            <td>
+                                <p>Prefix: Mr</p>
+                                <p>Given Name: Richard</p>
+                                <p>Family Name: Smith</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Date of birth</th>
+                            <td>1 January 1957</td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td>Male</td>
+                        </tr>
+                        <tr>
+                            <th>NHS number</th>
+                            <td>1352465790</td>
+                        </tr>
+                        <tr>
+                            <th>Patient address</th>
+                            <td>
+                                <p>Address Line: 21, Grove Street, Overtown</p>
+                                <p>City: Leeds</p>
+                                <p>Post Code: LS21 1PF</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Relevant contacts</th>
+                            <td>Name: Joy Smith <p>Relationship: Next of kin</p>
+                                <p>Contact details: Tel. 0712345678 Email. mrssmith@mymail.com</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--reference to further information carried in the patient resource-->
+        <entry>
+            <reference value="urn:uuid:31686b67-9f20-4644-9a54-193d2f91de57"/>
+        </entry>
+    </section>
+    <!--Person completing record-->
+    <section>
+        <title value="Person completing record"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887231000000104"/>
+                <display value="Person completing record"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>
+                                <p>Prefix: Dr</p>
+                                <p>Given Name: Paul</p>
+                                <p>Family Name: Rastall</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Role</th>
+                            <td>Consultant</td>
+                        </tr>
+                        <tr>
+                            <th>Specialty</th>
+                            <td>Cardiology</td>
+                        </tr>
+                        <tr>
+                            <th>Professional identifier</th>
+                            <td>GMC: 6122477</td>
+                        </tr>
+                        <tr>
+                            <th>Date and time completed</th>
+                            <td>17 Feb 2015 10:00</td>
+                        </tr>
+                        <tr>
+                            <th>Contact details</th>
+                            <td>Phone: 0113 6323200 (Work)</td>
+                        </tr>
+                        <tr>
+                            <th>Organisation</th>
+                            <td>
+                                <p>Name: Leeds Teaching Hospitals NHS Trust,</p>
+                                <p>Address Line: St James's University Hospital, Beckett Street</p>
+                                <p>City: Leeds</p>
+                                <p>Post Code: LS9 7TF</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--reference to practitioner entry-->
+        <entry>
+            <reference value="urn:uuid:6239b7a7-380d-46ff-a1c5-7abc4e68f8bc"/>
+        </entry>
+    </section>
+    <!--Plan and requested actions-->
+    <section>
+        <title value="Plan and requested actions"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887201000000105"/>
+                <display value="Plan and requested actions"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Actions for healthcare professionals</th>
+                            <td>GP please continue secondary preventative medication. <p>Status: Requested</p>
+                                <p>Doses will be uptitrated by Cardiac Rehab team.</p>
+                                <p>Status: Requested</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Actions for patient or their carer</th>
+                            <td>Patient to attend community follow up after discharge.</td>
+                        </tr>
+                        <tr>
+                            <th>Agreed with patient or legitimate patient representative</th>
+                            <td>Patient agreed to avoid driving for one week on discharge.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+    <!--Procedures-->
+    <section>
+        <title value="Procedures"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887171000000109"/>
+                <display value="Procedures"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Procedure name</th>
+                            <td>Percutaneous coronary intervention</td>
+                        </tr>
+                        <tr>
+                            <th>Anatomical site</th>
+                            <td>Right coronary artery structure</td>
+                        </tr>
+                        <tr>
+                            <th>Comment</th>
+                            <td>Patient successfully underwent angioplasty procedure to place a drug eluting stent.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--reference to further information carried in the procedure list-->
+        <entry>
+            <reference value="urn:uuid:1e04ce96-6e52-4f82-bc26-93c89c5836a1"/>
+        </entry>
+    </section>
+    <!--Referrer details-->
+    <section>
+        <title value="Referrer details"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="1052891000000108"/>
+                <display value="Referrer details"/>
+            </coding>
+        </code>
+        <text>
+            <status value="generated"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Referrer details</th>
+                            <td>
+                                <p>Name:</p>
+                                <p>Prefix: Dr.</p>
+                                <p>Given name: Amanda</p>
+                                <p>Family name: Smith</p>
+                                <p>Role: Specialist Registrar</p>
+                                <p>Tel: 0113 6323222 (work)</p>
+                                <p>Organisation</p>
+                                <p>Name: St. James's University Hospital Accident and Emergency Department</p>
+                                <p>Address Line: St James's University Hospital, Beckett Street</p>
+                                <p>City: Leeds</p>
+                                <p>Post Code: LS9 7TF</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <!--reference to practitioner and organisation entries-->
+        <entry>
+            <reference value="urn:uuid:d791b058-2624-436a-bc02-db38d65325b8"/>
+        </entry>
+        <entry>
+            <reference value="urn:uuid:5f76e146-3eaa-4f0e-aa3b-8d26b8b2febe"/>
+        </entry>
+    </section>
+    <!--Social context -->
+    <section>
+        <title value="Social context"/>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="887051000000101"/>
+                <display value="Social context"/>
+            </coding>
+        </code>
+        <text>
+            <status value="additional"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th>Household composition</th>
+                            <td>Lives with wife</td>
+                        </tr>
+                        <tr>
+                            <th>Occupational history</th>
+                            <td>Self employed electrician</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+    </section>
+</Composition>
