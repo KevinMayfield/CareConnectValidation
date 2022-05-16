@@ -1,4 +1,4 @@
-<Composition>
+<Composition xmlns="http://hl7.org/fhir">
     <id value="fa2a75a7-4257-422d-92a4-cf537f078e13"/>
     <meta>
         <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-EDIS-Composition-1"/>
