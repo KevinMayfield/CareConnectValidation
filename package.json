@@ -1,0 +1,14 @@
+{
+    "name": "uk.nhsdigital.stu3",
+    "description": "NHS Digital FHIR IG for STU3",
+    "author": "nhsdigital",
+    "fhirVersions": [
+      "3.0.2"
+    ],
+    "dependencies": {
+      "hl7.fhir.r3.core": "3.0.2",
+      "CareConnect.STU3.02.00.00": "2.0.0"
+    },
+    "jurisdiction" : "urn:iso:std:iso:3166:-2:GB-ENG"
+  }
+  
