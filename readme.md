@@ -31,6 +31,7 @@ java -jar validator_cli.jar Bundle/TOC-MentalHealthDischarge-JonBurrows.xml -ig 
 - no IG Package. For latest package see https://simplifier.net/NHS-Digital-IG-for-FHIR-STU3/~packages
 - Extension https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1 is not allowed to be used in Encounters. Removed from examples.
 - The bundle is difficult to navigate. E.g. an error like `Error @ Bundle.entry[17].resource.ofType(List).entry[0].item (line 1589, col12): Invalid Resource target type. Found Procedure, but expected one of ([])` Need to find the 17th resource and see what it is.
+- Examples generate numerous warnings. Most should be corrected.
 
 ## Old versions of HL7 CLI
 
