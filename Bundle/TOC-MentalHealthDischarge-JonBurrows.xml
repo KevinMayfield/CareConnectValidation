@@ -934,15 +934,6 @@ LUCs0.2x10*9/L&lt; 0.4
                 <meta>
                     <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Encounter-1" />
                 </meta>
-                <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1">
-                    <valueCodeableConcept>
-                        <coding>
-                            <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-AdmissionMethod-1" />
-                            <code value="21" />
-                            <display value="Accident and emergency or dental casualty department of the Health Care Provider" />
-                        </coding>
-                    </valueCodeableConcept>
-                </extension>
                 <identifier>
                     <system value="https://tools.ietf.org/html/rfc4122" />
                     <value value="24c91f00-dde0-4662-bdce-2e483fe89daa" />

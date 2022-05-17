@@ -9,9 +9,20 @@ java -jar validator_cli.jar Composition/Composition-RichardSmith.xml -ig https:/
 
 ### Full Bundle
 
+#### Inpatient
+
 java -jar validator_cli.jar Bundle/TOC-InpatientDischarge-RichardSmith.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
 
+#### Emergency
 java -jar validator_cli.jar Bundle/TOC-EmergencyDischarge-RichardSmith.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
+
+#### Outpatient
+
+java -jar validator_cli.jar Bundle/TOC-OutpatientLetter-ThomasLinacre.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
+
+#### MentalHealth
+
+java -jar validator_cli.jar Bundle/TOC-MentalHealthDischarge-JonBurrows.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
 
 ## Issues
 
@@ -23,8 +34,8 @@ java -jar validator_cli.jar Bundle/TOC-EmergencyDischarge-RichardSmith.xml -ig h
 
 ## Old versions of HL7 CLI
 
-java -jar validator_cli.jar Composition/Composition-RichardSmith.xml -ig https://packages.simplifier.net/CareConnect.STU3.02.00.00/-/CareConnect.STU3.02.00.00-2.0.0.tgz -ig NHSDigitalSTU3/ -version 3.0 -tx n/a
+java -jar validator_cli.jar Composition/Composition-RichardSmith.xml -ig https://packages.simplifier.net/CareConnect.STU3.02.00.00/-/CareConnect.STU3.02.00.00-2.0.0.tgz -ig StructureDefinition/ -version 3.0 -tx n/a
 
-java -jar validator_cli.jar Encounter/Encounter-RichardSmith.xml -ig https://packages.simplifier.net/CareConnect.STU3.02.00.00/-/CareConnect.STU3.02.00.00-2.0.0.tgz -ig NHSDigitalSTU3/ -version 3.0 -tx n/a
+java -jar validator_cli.jar Encounter/Encounter-RichardSmith.xml -ig https://packages.simplifier.net/CareConnect.STU3.02.00.00/-/CareConnect.STU3.02.00.00-2.0.0.tgz -ig StructureDefinition/ -version 3.0 -tx n/a
 
-java -jar validator_cli.jar Bundle/TOC-RichardSmith.xml -ig NHSDigitalSTU3/ -ig 	https://packages.simplifier.net/CareConnect.STU3.02.00.00/-/CareConnect.STU3.02.00.00-2.0.0.tgz -version 3.0 -tx n/a
+java -jar validator_cli.jar Bundle/TOC-MentalHealthDischarge-JonBurrows.xml -ig StructureDefinition/ -ig 	https://packages.simplifier.net/CareConnect.STU3.02.00.00/-/CareConnect.STU3.02.00.00-2.0.0.tgz -version 3.0 -tx n/a
