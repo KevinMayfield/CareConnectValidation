@@ -1,0 +1,89 @@
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="4f36b35a-ad18-4ea9-a3fb-c893f709e88a"/>
+    <meta>
+        <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Encounter-1"/>
+    </meta>
+    <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1">
+        <valueCodeableConcept>
+            <coding>
+                <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-AdmissionMethod-1"/>
+                <code value="21"/>
+                <display value="Accident and emergency or dental casualty department of the Health Care Provider"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    <identifier>
+        <system value="https://tools.ietf.org/html/rfc4122"/>
+        <value value="13c73015-d8fa-4844-8d68-4f856883eca8"/>
+    </identifier>
+    <status value="finished"/>
+    <class>
+        <system value="http://hl7.org/fhir/v3/ActCode"/>
+        <code value="IMP"/>
+        <display value="inpatient encounter"/>
+    </class>
+    <!--Specific type of encounter-->
+    <type>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="24882007"/>
+            <display value="Medical consultation on hospital inpatient"/>
+        </coding>
+    </type>
+    <!--Reference to the patient as the subject of the Encounter-->
+    <subject>
+        <reference value="urn:uuid:31686b67-9f20-4644-9a54-193d2f91de57"/>
+    </subject>
+    <participant>
+        <type>
+            <coding>
+                <system value="http://hl7.org/fhir/v3/ParticipationType"/>
+                <code value="DIS"/>
+                <display value="discharger"/>
+            </coding>
+        </type>
+        <individual>
+            <reference value="urn:uuid:6239b7a7-380d-46ff-a1c5-7abc4e68f8bc"/>
+        </individual>
+    </participant>
+    <period>
+        <start value="2015-02-12T09:00:00+00:00"/>
+        <end value="2015-02-16T15:00:00+00:00"/>
+    </period>
+    <reason>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="425419005"/>
+            <display value="ECG: inferior ischaemia"/>
+        </coding>
+    </reason>
+    <hospitalization>
+        <!--From where patient was admitted-->
+        <admitSource>
+            <coding>
+                <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1"/>
+                <code value="51"/>
+                <display value="NHS other Hospital Provider - Ward for general Patients or the 
+younger physically disabled or A and E department"/>
+            </coding>
+        </admitSource>
+        <!--Category or kind of location after discharge-->
+        <dischargeDisposition>
+            <coding>
+                <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1"/>
+                <code value="19"/>
+                <display value="Usual place of residence unless listed below, for example, a private dwelling whether owner occupied or owned by Local Authority, housing association or other landlord. This includes wardened accommodation but not residential accommodation where health care is provided. It also includes Patients with no fixed abode."/>
+            </coding>
+        </dischargeDisposition>
+    </hospitalization>
+    <!--List of locations where the patient has been-->
+    <location>
+        <!-- Discharge location-->
+        <location>
+            <reference value="urn:uuid:01bb1ccc-577b-4a4a-9fb0-9c8fe9f21fa3"/>
+        </location>
+        <period>
+            <end value="2015-02-16T15:00:00+00:00"/>
+        </period>
+    </location>
+</Encounter>
