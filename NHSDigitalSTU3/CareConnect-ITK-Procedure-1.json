@@ -1,0 +1,785 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "CareConnect-ITK-Procedure-1",
+    "meta": {
+        "lastUpdated": "2018-05-22T14:54:18.51+01:00"
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+            "valueCode": "pc"
+        }
+    ],
+    "url": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Procedure-1",
+    "version": "1.2.0",
+    "name": "CareConnect-ITK-Procedure-1",
+    "status": "active",
+    "date": "2018-10-22",
+    "publisher": "NHS Digital",
+    "contact": [
+        {
+            "name": "Interoperability Team",
+            "telecom": [
+                {
+                    "system": "email",
+                    "value": "interoperabilityteam@nhs.net",
+                    "use": "work"
+                }
+            ]
+        }
+    ],
+    "description": "An action that is or was performed on a patient.",
+    "purpose": "CURATED BY INTEROPen see: http://www.interopen.org/careconnect-curation-methodology/ ",
+    "copyright": "Copyright © 2017 NHS Digital",
+    "fhirVersion": "3.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "Procedure",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "Procedure.extension",
+                "path": "Procedure.extension",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "url"
+                        }
+                    ],
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.extension:anaestheticIssues",
+                "path": "Procedure.extension",
+                "sliceName": "anaestheticIssues",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AnaestheticIssues-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.extension:anaestheticIssues.url",
+                "path": "Procedure.extension.url",
+                "fixedUri": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AnaestheticIssues-1"
+            },
+            {
+                "id": "Procedure.identifier.type.coding.system",
+                "path": "Procedure.identifier.type.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.identifier.type.coding.code",
+                "path": "Procedure.identifier.type.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.identifier.type.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.identifier.type.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.identifier.system",
+                "path": "Procedure.identifier.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.identifier.value",
+                "path": "Procedure.identifier.value",
+                "min": 1
+            },
+            {
+                "id": "Procedure.identifier.assigner",
+                "path": "Procedure.identifier.assigner",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.identifier.assigner.reference",
+                "path": "Procedure.identifier.assigner.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.definition",
+                "path": "Procedure.definition",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.basedOn",
+                "path": "Procedure.basedOn",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.basedOn.reference",
+                "path": "Procedure.basedOn.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.partOf",
+                "path": "Procedure.partOf",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Procedure-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.partOf.reference",
+                "path": "Procedure.partOf.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.status",
+                "path": "Procedure.status",
+                "fixedCode": "completed"
+            },
+            {
+                "id": "Procedure.notDone",
+                "path": "Procedure.notDone",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.notDoneReason",
+                "path": "Procedure.notDoneReason",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.notDoneReason.coding.system",
+                "path": "Procedure.notDoneReason.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.notDoneReason.coding.code",
+                "path": "Procedure.notDoneReason.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.notDoneReason.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.notDoneReason.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.category",
+                "path": "Procedure.category",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.category.coding.system",
+                "path": "Procedure.category.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.category.coding.code",
+                "path": "Procedure.category.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.category.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.category.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.code",
+                "path": "Procedure.code",
+                "binding": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                            "valueString": "ProcedureCode"
+                        }
+                    ],
+                    "strength": "preferred",
+                    "description": "A code to identify a specific procedure."
+                }
+            },
+            {
+                "id": "Procedure.code.coding",
+                "path": "Procedure.code.coding",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "system"
+                        }
+                    ],
+                    "ordered": false,
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT",
+                "path": "Procedure.code.coding",
+                "sliceName": "snomedCT",
+                "max": "1",
+                "binding": {
+                    "strength": "extensible",
+                    "description": "A code from the SNOMED Clinical Terminology UK.",
+                    "valueSetReference": {
+                        "reference": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProcedureCode-1"
+                    }
+                }
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT.extension",
+                "path": "Procedure.code.coding.extension",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "url"
+                        }
+                    ],
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT.extension:snomedCTDescriptionID",
+                "path": "Procedure.code.coding.extension",
+                "sliceName": "snomedCTDescriptionID",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT.system",
+                "path": "Procedure.code.coding.system",
+                "min": 1,
+                "fixedUri": "http://snomed.info/sct"
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT.version",
+                "path": "Procedure.code.coding.version",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT.code",
+                "path": "Procedure.code.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.code.coding:snomedCT.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.code.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.subject",
+                "path": "Procedure.subject",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.subject.reference",
+                "path": "Procedure.subject.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.context",
+                "path": "Procedure.context",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Encounter-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.context.reference",
+                "path": "Procedure.context.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.performer.role.coding.system",
+                "path": "Procedure.performer.role.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.performer.role.coding.code",
+                "path": "Procedure.performer.role.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.performer.role.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.performer.role.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.performer.actor",
+                "path": "Procedure.performer.actor",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Device-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/ITK-RelatedPerson-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.performer.actor.reference",
+                "path": "Procedure.performer.actor.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.performer.onBehalfOf",
+                "path": "Procedure.performer.onBehalfOf",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.performer.onBehalfOf.reference",
+                "path": "Procedure.performer.onBehalfOf.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.location",
+                "path": "Procedure.location",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Location-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.location.reference",
+                "path": "Procedure.location.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.reasonCode.coding.system",
+                "path": "Procedure.reasonCode.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.reasonCode.coding.code",
+                "path": "Procedure.reasonCode.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.reasonCode.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.reasonCode.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.reasonReference",
+                "path": "Procedure.reasonReference",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Observation-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Condition-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.reasonReference.reference",
+                "path": "Procedure.reasonReference.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.bodySite.coding",
+                "path": "Procedure.bodySite.coding",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "system"
+                        }
+                    ],
+                    "ordered": false,
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT",
+                "path": "Procedure.bodySite.coding",
+                "sliceName": "snomedCT",
+                "max": "1",
+                "binding": {
+                    "strength": "extensible",
+                    "description": "A code from the SNOMED Clinical Terminology UK.",
+                    "valueSetReference": {
+                        "reference": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-BodySite-1"
+                    }
+                }
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT.extension",
+                "path": "Procedure.bodySite.coding.extension",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "url"
+                        }
+                    ],
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT.extension:snomedCTDescriptionID",
+                "path": "Procedure.bodySite.coding.extension",
+                "sliceName": "snomedCTDescriptionID",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT.system",
+                "path": "Procedure.bodySite.coding.system",
+                "min": 1,
+                "fixedUri": "http://snomed.info/sct"
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT.version",
+                "path": "Procedure.bodySite.coding.version",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT.code",
+                "path": "Procedure.bodySite.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.bodySite.coding:snomedCT.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.bodySite.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.outcome.coding.system",
+                "path": "Procedure.outcome.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.outcome.coding.code",
+                "path": "Procedure.outcome.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.outcome.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.outcome.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.report",
+                "path": "Procedure.report",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.complication.coding",
+                "path": "Procedure.complication.coding",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "system"
+                        }
+                    ],
+                    "ordered": false,
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT",
+                "path": "Procedure.complication.coding",
+                "sliceName": "snomedCT",
+                "max": "1",
+                "binding": {
+                    "strength": "required",
+                    "description": "A code from the SNOMED Clinical Terminology UK.",
+                    "valueSetReference": {
+                        "reference": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ConditionCode-1"
+                    }
+                }
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT.extension",
+                "path": "Procedure.complication.coding.extension",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "url"
+                        }
+                    ],
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT.extension:snomedCTDescriptionID",
+                "path": "Procedure.complication.coding.extension",
+                "sliceName": "snomedCTDescriptionID",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT.system",
+                "path": "Procedure.complication.coding.system",
+                "min": 1,
+                "fixedUri": "http://snomed.info/sct"
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT.version",
+                "path": "Procedure.complication.coding.version",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT.code",
+                "path": "Procedure.complication.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.complication.coding:snomedCT.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.complication.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.complicationDetail",
+                "path": "Procedure.complicationDetail",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Condition-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.complicationDetail.reference",
+                "path": "Procedure.complicationDetail.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.followUp",
+                "path": "Procedure.followUp",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.followUp.coding.system",
+                "path": "Procedure.followUp.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.followUp.coding.code",
+                "path": "Procedure.followUp.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.followUp.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.followUp.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.note",
+                "path": "Procedure.note",
+                "max": "0"
+            },
+            {
+                "id": "Procedure.note.author[x]",
+                "path": "Procedure.note.author[x]",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+                    },
+                    {
+                        "code": "string"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.focalDevice.action.coding.system",
+                "path": "Procedure.focalDevice.action.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.focalDevice.action.coding.code",
+                "path": "Procedure.focalDevice.action.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.focalDevice.action.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.focalDevice.action.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Procedure.focalDevice.manipulated",
+                "path": "Procedure.focalDevice.manipulated",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Device-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.focalDevice.manipulated.reference",
+                "path": "Procedure.focalDevice.manipulated.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.usedReference",
+                "path": "Procedure.usedReference",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Device-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Medication-1"
+                    }
+                ]
+            },
+            {
+                "id": "Procedure.usedReference.reference",
+                "path": "Procedure.usedReference.reference",
+                "min": 1
+            },
+            {
+                "id": "Procedure.usedCode.coding.system",
+                "path": "Procedure.usedCode.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Procedure.usedCode.coding.code",
+                "path": "Procedure.usedCode.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Procedure.usedCode.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Procedure.usedCode.coding.display",
+                "min": 1
+            }
+        ]
+    }
+}
