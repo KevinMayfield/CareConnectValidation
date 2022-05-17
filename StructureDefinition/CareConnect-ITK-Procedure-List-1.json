@@ -1,0 +1,378 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "CareConnect-ITK-Procedure-List-1",
+    "meta": {
+        "lastUpdated": "2018-06-29T13:54:58.886+01:00"
+    },
+    "url": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Procedure-List-1",
+    "version": "1.3.0",
+    "name": "CareConnect-ITK-Procedure-List-1",
+    "status": "active",
+    "date": "2018-10-22",
+    "publisher": "NHS Digital",
+    "contact": [
+        {
+            "name": "Interoperability Team",
+            "telecom": [
+                {
+                    "system": "email",
+                    "value": "interoperabilityteam@nhs.net",
+                    "use": "work"
+                }
+            ]
+        }
+    ],
+    "description": "Within the ITK eDischarge message, the Procedure constrained List is used to hold a record of Procedures performed on the patient.",
+    "purpose": "CURATED BY INTEROPen see: http://www.interopen.org/careconnect-curation-methodology/ ",
+    "copyright": "Copyright © 2018 NHS Digital",
+    "fhirVersion": "3.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "List",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/List",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "List.extension",
+                "path": "List.extension",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "url"
+                        }
+                    ],
+                    "rules": "open"
+                }
+            },
+            {
+                "id": "List.extension:clinicalSetting",
+                "path": "List.extension",
+                "sliceName": "clinicalSetting",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ClinicalSetting-1"
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "List.extension:clinicalSetting.url",
+                "path": "List.extension.url",
+                "fixedUri": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ClinicalSetting-1"
+            },
+            {
+                "id": "List.extension:warningCode",
+                "path": "List.extension",
+                "sliceName": "warningCode",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ListWarningCode-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.extension:warningCode.url",
+                "path": "List.extension.url",
+                "fixedUri": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ListWarningCode-1"
+            },
+            {
+                "id": "List.identifier",
+                "path": "List.identifier",
+                "min": 1,
+                "max": "1"
+            },
+            {
+                "id": "List.identifier.type.coding.system",
+                "path": "List.identifier.type.coding.system",
+                "min": 1
+            },
+            {
+                "id": "List.identifier.type.coding.code",
+                "path": "List.identifier.type.coding.code",
+                "min": 1
+            },
+            {
+                "id": "List.identifier.type.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "List.identifier.type.coding.display",
+                "min": 1
+            },
+            {
+                "id": "List.identifier.system",
+                "path": "List.identifier.system",
+                "min": 1
+            },
+            {
+                "id": "List.identifier.value",
+                "path": "List.identifier.value",
+                "min": 1
+            },
+            {
+                "id": "List.identifier.assigner",
+                "path": "List.identifier.assigner",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.identifier.assigner.reference",
+                "path": "List.identifier.assigner.reference",
+                "min": 1
+            },
+            {
+                "id": "List.status",
+                "path": "List.status",
+                "fixedCode": "current"
+            },
+            {
+                "id": "List.mode",
+                "path": "List.mode",
+                "fixedCode": "snapshot"
+            },
+            {
+                "id": "List.code",
+                "path": "List.code",
+                "min": 1,
+                "binding": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                            "valueString": "ListPurpose"
+                        }
+                    ],
+                    "strength": "required",
+                    "valueSetReference": {
+                        "reference": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1"
+                    }
+                }
+            },
+            {
+                "id": "List.code.coding",
+                "path": "List.code.coding",
+                "min": 1,
+                "max": "1"
+            },
+            {
+                "id": "List.code.coding.system",
+                "path": "List.code.coding.system",
+                "min": 1,
+                "fixedUri": "http://snomed.info/sct"
+            },
+            {
+                "id": "List.code.coding.version",
+                "path": "List.code.coding.version",
+                "max": "0"
+            },
+            {
+                "id": "List.code.coding.code",
+                "path": "List.code.coding.code",
+                "min": 1
+            },
+            {
+                "id": "List.code.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "List.code.coding.display",
+                "min": 1
+            },
+            {
+                "id": "List.code.coding.userSelected",
+                "path": "List.code.coding.userSelected",
+                "max": "0"
+            },
+            {
+                "id": "List.code.text",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "List.code.text",
+                "max": "0"
+            },
+            {
+                "id": "List.subject",
+                "path": "List.subject",
+                "min": 1,
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.subject.reference",
+                "path": "List.subject.reference",
+                "min": 1
+            },
+            {
+                "id": "List.encounter",
+                "path": "List.encounter",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Encounter-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.encounter.reference",
+                "path": "List.encounter.reference",
+                "min": 1
+            },
+            {
+                "id": "List.source",
+                "path": "List.source",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.source.reference",
+                "path": "List.source.reference",
+                "min": 1
+            },
+            {
+                "id": "List.orderedBy",
+                "path": "List.orderedBy",
+                "max": "0"
+            },
+            {
+                "id": "List.note",
+                "path": "List.note",
+                "max": "0"
+            },
+            {
+                "id": "List.note.author[x]",
+                "path": "List.note.author[x]",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+                    },
+                    {
+                        "code": "string"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+                    },
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.entry.flag",
+                "path": "List.entry.flag",
+                "binding": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                            "valueString": "ListItemFlag"
+                        }
+                    ],
+                    "strength": "preferred",
+                    "description": "Status/Workflow information about this item"
+                }
+            },
+            {
+                "id": "List.entry.flag.coding.system",
+                "path": "List.entry.flag.coding.system",
+                "min": 1
+            },
+            {
+                "id": "List.entry.flag.coding.code",
+                "path": "List.entry.flag.coding.code",
+                "min": 1
+            },
+            {
+                "id": "List.entry.flag.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "List.entry.flag.coding.display",
+                "min": 1
+            },
+            {
+                "id": "List.entry.item",
+                "path": "List.entry.item",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Procedure-1"
+                    }
+                ]
+            },
+            {
+                "id": "List.entry.item.reference",
+                "path": "List.entry.item.reference",
+                "min": 1
+            },
+            {
+                "id": "List.emptyReason",
+                "path": "List.emptyReason",
+                "binding": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+                            "valueString": "ListEmptyReason"
+                        }
+                    ],
+                    "strength": "preferred",
+                    "valueSetReference": {
+                        "reference": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListEmptyReasonCode-1"
+                    }
+                }
+            },
+            {
+                "id": "List.emptyReason.coding.system",
+                "path": "List.emptyReason.coding.system",
+                "min": 1
+            },
+            {
+                "id": "List.emptyReason.coding.code",
+                "path": "List.emptyReason.coding.code",
+                "min": 1
+            },
+            {
+                "id": "List.emptyReason.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "List.emptyReason.coding.display",
+                "min": 1
+            }
+        ]
+    }
+}

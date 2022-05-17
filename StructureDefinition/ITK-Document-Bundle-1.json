@@ -1,0 +1,158 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "ITK-Document-Bundle-1",
+    "meta": {
+        "lastUpdated": "2018-08-17T12:13:37.238+01:00"
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+            "valueCode": "fhir"
+        }
+    ],
+    "url": "https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Document-Bundle-1",
+    "version": "1.1.0",
+    "name": "ITK-Document-Bundle-1",
+    "title": "ITK Document Bundle",
+    "status": "active",
+    "date": "2017-08-17",
+    "publisher": "NHS Digital",
+    "contact": [
+        {
+            "name": "Interoperability Team",
+            "telecom": [
+                {
+                    "system": "email",
+                    "value": "interoperabilityteam@nhs.net",
+                    "use": "work"
+                }
+            ]
+        }
+    ],
+    "description": "There is a requirement to gather together a collection of resources into a single instance with containing context.",
+    "purpose": "There is a requirement to gather together a collection of resources into a single instance with containing context.",
+    "copyright": "Copyright © 2018 NHS Digital",
+    "fhirVersion": "3.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "Bundle",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "Bundle.identifier",
+                "path": "Bundle.identifier",
+                "min": 1
+            },
+            {
+                "id": "Bundle.identifier.type.coding.system",
+                "path": "Bundle.identifier.type.coding.system",
+                "min": 1
+            },
+            {
+                "id": "Bundle.identifier.type.coding.code",
+                "path": "Bundle.identifier.type.coding.code",
+                "min": 1
+            },
+            {
+                "id": "Bundle.identifier.type.coding.display",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+                        "valueBoolean": true
+                    }
+                ],
+                "path": "Bundle.identifier.type.coding.display",
+                "min": 1
+            },
+            {
+                "id": "Bundle.identifier.system",
+                "path": "Bundle.identifier.system",
+                "example": [
+                    {
+                        "label": "General",
+                        "valueUri": "https://tools.ietf.org/html/rfc4122, if the identifier.value is a UUID"
+                    }
+                ]
+            },
+            {
+                "id": "Bundle.identifier.value",
+                "path": "Bundle.identifier.value",
+                "min": 1,
+                "example": [
+                    {
+                        "label": "General",
+                        "valueString": "27dca674-d5a7-4184-b1d8-372ea339cbc9"
+                    }
+                ]
+            },
+            {
+                "id": "Bundle.identifier.assigner",
+                "path": "Bundle.identifier.assigner",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+                    }
+                ]
+            },
+            {
+                "id": "Bundle.identifier.assigner.reference",
+                "path": "Bundle.identifier.assigner.reference",
+                "min": 1
+            },
+            {
+                "id": "Bundle.type",
+                "path": "Bundle.type",
+                "short": "Bundle identified by bundle type 'document'",
+                "fixedCode": "document"
+            },
+            {
+                "id": "Bundle.total",
+                "path": "Bundle.total",
+                "max": "0"
+            },
+            {
+                "id": "Bundle.link",
+                "path": "Bundle.link",
+                "max": "0"
+            },
+            {
+                "id": "Bundle.entry",
+                "path": "Bundle.entry",
+                "min": 1
+            },
+            {
+                "id": "Bundle.entry.link",
+                "path": "Bundle.entry.link",
+                "max": "0"
+            },
+            {
+                "id": "Bundle.entry.resource",
+                "path": "Bundle.entry.resource",
+                "min": 1
+            },
+            {
+                "id": "Bundle.entry.search",
+                "path": "Bundle.entry.search",
+                "max": "0"
+            },
+            {
+                "id": "Bundle.entry.request",
+                "path": "Bundle.entry.request",
+                "max": "0"
+            },
+            {
+                "id": "Bundle.entry.response",
+                "path": "Bundle.entry.response",
+                "max": "0"
+            },
+            {
+                "id": "Bundle.signature",
+                "path": "Bundle.signature",
+                "max": "0"
+            }
+        ]
+    }
+}

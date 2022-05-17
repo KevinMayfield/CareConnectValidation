@@ -9,7 +9,9 @@ java -jar validator_cli.jar Composition/Composition-RichardSmith.xml -ig https:/
 
 ### Full Bundle
 
-java -jar validator_cli.jar Bundle/TOC-RichardSmith.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
+java -jar validator_cli.jar Bundle/TOC-InpatientDischarge-RichardSmith.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
+
+java -jar validator_cli.jar Bundle/TOC-EmergencyDischarge-RichardSmith.xml -ig https://packages.simplifier.net/uk.nhsdigital.stu3.test/-/uk.nhsdigital.stu3.test-0.0.1-prerelease.tgz -version 3.0 -tx n/a
 
 ## Issues
 
