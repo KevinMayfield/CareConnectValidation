@@ -33,6 +33,7 @@ java -jar validator_cli.jar Bundle/TOC-MentalHealthDischarge-JonBurrows.xml -ig 
 - The bundle is difficult to navigate. E.g. an error like `Error @ Bundle.entry[17].resource.ofType(List).entry[0].item (line 1589, col12): Invalid Resource target type. Found Procedure, but expected one of ([])` Need to find the 17th resource and see what it is.
 - Examples generate numerous warnings. Most should be corrected.
 - Simplifier Validation does not pick up resources from other IG's (i.e. CareConnect)
+- Both CareConnect and Transfer of Care work with the HL7 Command Line validator
 
 ## Old versions of HL7 CLI
 
